@@ -9,23 +9,13 @@ import {CustomersComponent} from './com/project/components/customers/customers.c
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component: AuthComponent},
-  { path: 'view', component: GrumatoViewComponent},
   {
     path: 'view',
     component: GrumatoViewComponent,
     children: [
-      {
-        path: 'users',
-        component: UsersComponent
-      },
-      {
-        path: 'orders',
-        component: OrdersComponent
-      },
-      {
-        path: 'customers',
-        component: CustomersComponent
-      }
+      { path: 'users', component: UsersComponent },
+      { path: 'orders', component: OrdersComponent },
+      { path: 'customers', component: CustomersComponent }
     ]
   }
 ];

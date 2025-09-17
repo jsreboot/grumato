@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {APP_INITIALIZER, NgModule} from '@angular/core';
+import { RouterModule } from '@angular/router'; // добавьте импорт
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -36,8 +37,6 @@ import {OrdersComponent} from './com/project/components/orders/orders.component'
 import {UsersComponent} from './com/project/components/users/users.component';
 import {CreateOrderComponent} from './com/project/components/add-data-modal-window/create-order/create-order.component';
 import {DataEffect} from './com/project/components/components-store/effets/data.effetc';
-import {DpDatePickerModule} from 'ng2-date-picker';
-import {AngularMyDatePickerModule} from "angular-mydatepicker";
 import {UserCardsWindowComponent} from './com/project/components/modals/user-cards-window/user-cards-window.component';
 import {CreateCustomerComponent} from './com/project/components/add-data-modal-window/create-customer/create-customer.component';
 import {CreateUserComponent} from './com/project/components/add-data-modal-window/create-user/create-user.component';
@@ -63,10 +62,10 @@ import { GenerateReportViewComponent } from './com/project/components/modals/gen
   ],
   imports: [
     BrowserModule,
-    DpDatePickerModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
+    RouterModule, // добавьте сюда, чтобы директивы роутера были видны в шаблонах
     NoopAnimationsModule,
     NbLayoutModule,
     NbEvaIconsModule,
@@ -77,7 +76,6 @@ import { GenerateReportViewComponent } from './com/project/components/modals/gen
     NbInputModule,
     NbButtonModule,
     NbTreeGridModule,
-    AngularMyDatePickerModule,
     NbUserModule,
     NbDialogModule.forChild(),
     NbDatepickerModule.forRoot(),
